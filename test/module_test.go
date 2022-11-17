@@ -17,11 +17,7 @@ func TestModule(t *testing.T) {
 
 	defer terraform.Destroy(t, terraformOptions)
 
-	terraform.Init(t, terraformOptions)
-
-	terraform.WorkspaceSelectOrNew(t, terraformOptions, "testing-test")
-
-	terraform.Apply(t, terraformOptions)
+	terraform.InitAndApply(t, terraformOptions)
 
 	role := terraform.Output(t, terraformOptions, "role")
 	role_trust_policy_conditions := terraform.Output(t, terraformOptions, "role_trust_policy_conditions")
