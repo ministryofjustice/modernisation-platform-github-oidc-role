@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"regexp"
 	"testing"
 )
@@ -16,12 +17,11 @@ func TestModule(t *testing.T) {
 
 	defer terraform.Destroy(t, terraformOptions)
 
-	terraform.Init(t, terraformOptions)
-	terraform.WorkspaceSelectOrNew(t, terraformOptions, "testing-test")
+	terraform.InitAndApply(t, terraformOptions)
 
-	terraform.Apply(t, terraformOptions)
+	role := terraform.Output(t, terraformOptions, "role")
+	role_trust_policy_conditions := terraform.Output(t, terraformOptions, "role_trust_policy_conditions")
 
-	exampleName := terraform.Output(t, terraformOptions, "example_name")
-
-	assert.Regexp(t, regexp.MustCompile(`^example-name*`), exampleName)
+	assert.Regexp(t, regexp.MustCompile(`^arn:aws:iam::\d{12}:role/modernisation-platform-github-actions`), role)
+	require.Equal(t, role_trust_policy_conditions, "[map[token.actions.githubusercontent.com:sub:[repo:ministryofjustice/modernisation-platform-environments:* repo:ministryofjustice/modernisation-platform:*]]]")
 }
