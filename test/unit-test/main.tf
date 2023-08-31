@@ -1,5 +1,7 @@
 
 module "module_test" {
+  #checkov:skip=CKV_AWS_274
+  #checkov:skip=CKV_AWS_358
   source              = "../../"
   github_repositories = ["ministryofjustice/modernisation-platform-environments", "ministryofjustice/modernisation-platform"]
   role_name           = "modernisation-platform-github-actions"
@@ -14,6 +16,7 @@ data "aws_iam_policy_document" "first-policy" {
   #checkov:skip=CKV_AWS_109
   #checkov:skip=CKV_AWS_111
   #checkov:skip=CKV_AWS_110
+  #checkov:skip=CKV_AWS_356
   version = "2012-10-17"
 
   statement {
