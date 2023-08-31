@@ -17,6 +17,7 @@ data "aws_iam_policy_document" "first-policy" {
   #checkov:skip=CKV_AWS_111
   #checkov:skip=CKV_AWS_110
   #checkov:skip=CKV_AWS_356
+  #checkov:skip=CKV2_AWS_40
   version = "2012-10-17"
 
   statement {
