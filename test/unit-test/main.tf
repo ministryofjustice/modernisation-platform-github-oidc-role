@@ -10,6 +10,18 @@ module "module_test" {
   tags                = local.tags
 }
 
+module "module_test_with_subject_claim" {
+  #checkov:skip=CKV_AWS_274
+  #checkov:skip=CKV_AWS_358
+  source              = "../../"
+  github_repositories = ["ministryofjustice/modernisation-platform-environments", "ministryofjustice/modernisation-platform"]
+  role_name           = "modernisation-platform-github-actions-with-claim"
+  policy_arns         = ["arn:aws:iam::aws:policy/AdministratorAccess"]
+  policy_jsons        = [data.aws_iam_policy_document.first-policy.json, data.aws_iam_policy_document.second-policy.json]
+  subject_claim       = "pull_request"
+  tags                = local.tags
+}
+
 data "aws_iam_policy_document" "first-policy" {
   #checkov:skip=CKV_AWS_107
   #checkov:skip=CKV_AWS_108

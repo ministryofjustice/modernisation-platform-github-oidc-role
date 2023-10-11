@@ -40,3 +40,9 @@ variable "policy_jsons" {
     error_message = "All supplied policies must be valid json."
   }
 }
+
+variable "subject_claim" {
+  type        = string
+  description = "Github OIDC subject claim, defaults to *"
+  default     = "*"
+}

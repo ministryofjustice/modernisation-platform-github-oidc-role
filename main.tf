@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "this" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = formatlist("repo:%s:*", var.github_repositories)
+      values   = formatlist("repo:%s:%s", var.github_repositories, var.subject_claim)
     }
   }
 }
