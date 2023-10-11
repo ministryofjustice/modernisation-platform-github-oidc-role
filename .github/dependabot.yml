@@ -1,11 +1,11 @@
 version: 2
 
 updates:
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: "terraform"
     directory: "/"
     schedule:
       interval: "daily"
-  - package-ecosystem: "terraform"
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
