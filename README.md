@@ -58,6 +58,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_github_repositories"></a> [github\_repositories](#input\_github\_repositories) | The github repositories, for example ["ministryofjustice/modernisation-platform-environments:*"] | `list(string)` | n/a | yes |
+| <a name="input_max_session_duration"></a> [max\_session\_duration](#input\_max\_session\_duration) | The maximum session duration (in seconds) that you want to set for the specified role. Defaults to 3600 | `number` | `3600` | no |
 | <a name="input_policy_arns"></a> [policy\_arns](#input\_policy\_arns) | List of policy ARNs for the assumable role. Defaults to ["arn:aws:iam::aws:policy/ReadOnlyAccess"] | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br>]</pre> | no |
 | <a name="input_policy_jsons"></a> [policy\_jsons](#input\_policy\_jsons) | List of policy jsons for the assumable role. Defaults to [] | `list(string)` | `[]` | no |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | Name of role | `string` | n/a | yes |
