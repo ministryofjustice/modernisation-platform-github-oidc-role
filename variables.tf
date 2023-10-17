@@ -46,3 +46,13 @@ variable "subject_claim" {
   description = "Github OIDC subject claim, defaults to *"
   default     = "*"
 }
+
+variable "max_session_duration" {
+  type        = number
+  description = "The maximum session duration (in seconds) that you want to set for the specified role. Defaults to 3600"
+  default     = 3600
+  validation {
+    condition     = var.max_session_duration > 0 && var.max_session_duration <= 43200
+    error_message = "Max session duration must be between 1 and 43200 seconds."
+  }
+}

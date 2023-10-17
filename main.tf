@@ -1,8 +1,8 @@
-
 resource "aws_iam_role" "this" {
-  name               = var.role_name
-  assume_role_policy = data.aws_iam_policy_document.this.json
-  tags               = var.tags
+  name                 = var.role_name
+  assume_role_policy   = data.aws_iam_policy_document.this.json
+  max_session_duration = var.max_session_duration
+  tags                 = var.tags
 }
 
 data "aws_iam_policy_document" "this" {
@@ -38,11 +38,11 @@ resource "aws_iam_role_policy_attachment" "policy-arns" {
   role       = aws_iam_role.this.name
   policy_arn = each.key
 }
+
 data "aws_iam_policy_document" "combined-role-policy" {
   count                   = length(var.policy_jsons) > 0 ? 1 : 0
   source_policy_documents = var.policy_jsons
 }
-
 
 # Add actions missing from arn:aws:iam::aws:policy/ReadOnlyAccess
 resource "aws_iam_policy" "additional-permissions" {
