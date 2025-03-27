@@ -1,6 +1,6 @@
 # Modernisation Platform Github Web Identity Assumable Role Module
 
-[![repo standards badge](https://github-community.cloud-platform.service.justice.gov.uk/repository-standards/api/modernisation-platform-github-oidc-role/badge)](https://github-community.cloud-platform.service.justice.gov.uk/repository-standards/modernisation-platform-github-oidc-role)
+[![repo standards badge](https://github-community.service.justice.gov.uk/repository-standards/api/modernisation-platform-github-oidc-role/badge)](https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-github-oidc-role)
 
 ## Usage
 
