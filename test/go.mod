@@ -1,8 +1,10 @@
 module github.com/ministryofjustice/modernisation-platform-github-oidc-role
 
 go 1.23
+toolchain go1.24.1
+
 require (
-	github.com/gruntwork-io/terratest v0.48.0
+	github.com/gruntwork-io/terratest v0.48.2
 	github.com/stretchr/testify v1.10.0
 )
 
