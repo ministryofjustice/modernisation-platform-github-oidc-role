@@ -40,7 +40,8 @@ data "aws_iam_policy_document" "first-policy" {
       "identitystore:ListGroups",
       "secretsmanager:GetSecretValue",
       "sts:AssumeRole",
-      "s3:*",
+      "s3:GetObject",
+      "s3:PutObject",
       "kms:*",
       "iam:*"
     ]
