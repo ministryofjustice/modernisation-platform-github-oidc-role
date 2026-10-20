@@ -1,6 +1,6 @@
 # Modernisation Platform Github Web Identity Assumable Role Module
 
-[![repo standards badge](https://github-community.service.justice.gov.uk/repository-standards/api/modernisation-platform-github-oidc-role/badge)](https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-github-oidc-role)
+[![Standards Icon]][Standards Link] [![Scorecards Icon]][Scorecards Link] [![Code Quality Icon]][Code Quality Link]
 
 ## Usage
 
@@ -73,3 +73,10 @@ No modules.
 | <a name="output_role_additional_permissions_policy"></a> [role\_additional\_permissions\_policy](#output\_role\_additional\_permissions\_policy) | Additional role policy for the role |
 | <a name="output_role_trust_policy"></a> [role\_trust\_policy](#output\_role\_trust\_policy) | Assume role policy for the role |
 <!-- END_TF_DOCS -->
+
+[Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-github-oidc-role "Repo standards badge."
+[Standards Icon]: https://github-community.service.justice.gov.uk/repository-standards/api/modernisation-platform-github-oidc-role/badge
+[Scorecards Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-github-oidc-role/scorecards.yml?branch=main&labelColor=231f20&style=for-the-badge&label=Scorecards
+[Scorecards Link]: https://github.com/ministryofjustice/modernisation-platform-github-oidc-role/actions/workflows/scorecards.yml
+[Code Quality Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-github-oidc-role/code-quality.yml?branch=main&labelColor=231f20&style=for-the-badge&label=Code%20Quality
+[Code Quality Link]: https://github.com/ministryofjustice/modernisation-platform-github-oidc-role/actions/workflows/code-quality.yml
